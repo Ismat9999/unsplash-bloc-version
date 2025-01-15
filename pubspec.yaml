@@ -1,0 +1,40 @@
+name: unsplashblocversion
+description: "A new Flutter project."
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+#Bloc
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+  equatable: ^2.0.7
+#  Networking
+  flutter_staggered_grid_view: ^0.7.0
+  cached_network_image: ^3.3.1
+  http: ^0.13.3
+  http_interceptor: ^1.0.2
+  logger: ^2.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+
+  uses-material-design: true
+  # assets:
+  #   - images/a_dot_burr.jpeg
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+
