@@ -53,7 +53,7 @@ class _CollectionPageState extends State<CollectionPage> {
               ListView.builder(
                 itemCount: collectionBloc.items.length,
                 itemBuilder: (ctx, index) {
-                  return itemOfCollection(context,collectionBloc.items[index]);
+                  return itemOfCollection(context,collectionBloc.items[index], collectionBloc);
                 },
               ),
 

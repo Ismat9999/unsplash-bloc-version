@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:unsplashblocversion/presantation/blocs/collection/collection_bloc.dart';
 import 'package:unsplashblocversion/presantation/blocs/home/home_cubit.dart';
 import 'package:unsplashblocversion/presantation/blocs/home/home_state.dart';
+import 'package:unsplashblocversion/presantation/blocs/search/search_bloc.dart';
 import 'package:unsplashblocversion/presantation/pages/search_page.dart';
 import 'collection_page.dart';
 
@@ -32,14 +34,14 @@ class _HomePageState extends State<HomePage> {
           body: PageView(
             controller: pageController,
             children: [
-              Container(
-                color: Colors.red,
+              BlocProvider(
+                create: (context)=> SearchBloc(),
+                child: SearchPage(),
               ),
-              Container(
-                color: Colors.blue,
+              BlocProvider(
+                create: (context)=> CollectionBloc(),
+                child: CollectionPage(),
               ),
-              // SearchPage(),
-              // CollectionPage(),
             ],
             onPageChanged: (index) {
               homeCubit.onPageViewChange(index);

@@ -5,7 +5,7 @@ import 'package:unsplashblocversion/presantation/blocs/photos/photo_state.dart';
 import '../../../data/datasources/remote/http_services.dart';
 import '../../../data/models/photo_model.dart';
 
-abstract class PhotoBloc extends Bloc<PhotoEvent, PhotoState>{
+ class PhotoBloc extends Bloc<PhotoEvent, PhotoState>{
   bool isLoading = false;
   List<Photo> items = [];
 
@@ -19,6 +19,5 @@ abstract class PhotoBloc extends Bloc<PhotoEvent, PhotoState>{
         Network.API_COLLECTIONS_PHOTOS, Network.paramsCollectionsPhotos(1));
     var result = Network.parseCollectionsPhotos(response!);
     items = result;
-    isLoading = false;
   }
   }

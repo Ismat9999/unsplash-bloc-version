@@ -10,7 +10,6 @@ import '../widgets/items/item_of_photo.dart';
 
 class PhotosPage extends StatefulWidget {
   final Collection? collection;
-
   const PhotosPage({super.key, this.collection});
 
   @override
@@ -22,11 +21,9 @@ late PhotoBloc photoBloc;
   @override
   void initState() {
     super.initState();
-    photoBloc= BlocProvider.of<PhotoBloc>(context);
+    photoBloc= context.read<PhotoBloc>();
     photoBloc.add(ApiCollectionsPhotosEvent());
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +47,8 @@ late PhotoBloc photoBloc;
         ),
       ),
       body: BlocBuilder<PhotoBloc, PhotoState>(
-        builder: (context,index){
-          return Stack(
+    builder: (context,state){
+    return Stack(
             children: [
               MasonryGridView.builder(
                 gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
@@ -67,6 +64,7 @@ late PhotoBloc photoBloc;
               photoBloc.isLoading ? Center(child: CircularProgressIndicator(),) : SizedBox.shrink(),
             ],
           );
+
         },
       ),
     );

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:unsplashblocversion/presantation/blocs/collection/collection_bloc.dart';
+import 'package:unsplashblocversion/presantation/blocs/photos/photo_bloc.dart';
 
 import '../../../data/models/collection_model.dart';
 import '../../pages/photos_page.dart';
 
 
-Widget itemOfCollection(BuildContext context,Collection collection) {
+Widget itemOfCollection(BuildContext context,Collection collection, CollectionBloc collectionBloc) {
   return GestureDetector(
     onTap: () {
-      callPhotosPage(context,collection);
+      collectionBloc.callPhotosPage(context,collection);
     },
     child: Container(
       width: double.infinity,
@@ -49,12 +52,4 @@ Widget itemOfCollection(BuildContext context,Collection collection) {
       ),
     ),
   );
-}
-callPhotosPage(BuildContext context, Collection collection) {
-  Navigator.of(context)
-      .push(MaterialPageRoute(builder: (BuildContext context) {
-    return PhotosPage(
-      collection: collection,
-    );
-  }));
 }

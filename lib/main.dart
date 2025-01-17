@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:unsplashblocversion/presantation/blocs/collection/collection_bloc.dart';
 import 'package:unsplashblocversion/presantation/blocs/home/home_cubit.dart';
+import 'package:unsplashblocversion/presantation/blocs/photos/photo_bloc.dart';
+import 'package:unsplashblocversion/presantation/blocs/search/search_bloc.dart';
+import 'package:unsplashblocversion/presantation/pages/collection_page.dart';
 import 'package:unsplashblocversion/presantation/pages/home_page.dart';
+import 'package:unsplashblocversion/presantation/pages/photos_page.dart';
+import 'package:unsplashblocversion/presantation/pages/search_page.dart';
 
 
 void main() {
@@ -24,6 +30,6 @@ class MyApp extends StatelessWidget {
         create: (context)=> HomeCubit(),
         child: HomePage(),
       ),
-    );
+      );
   }
 }

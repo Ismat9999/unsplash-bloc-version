@@ -58,9 +58,10 @@ class _SearchPageState extends State<SearchPage> {
               MasonryGridView.builder(
                 controller: scrollController,
                 gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                itemCount: searchBloc.items.length,
                 mainAxisSpacing: 2,
                 crossAxisSpacing: 2,
-                itemBuilder: (ctx,index){
+                itemBuilder: (context,index){
                   return itemOfPhoto(context, searchBloc.items[index], index);
                 },
               ),

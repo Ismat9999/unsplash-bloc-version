@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../data/models/photo_model.dart';
 import '../../pages/details_page.dart';
 
-Widget itemOfPhoto(BuildContext context, Photo photo, index ) {
+Widget itemOfPhoto(BuildContext context, Photo photo,  int index ) {
   return GestureDetector(
     onTap: () {
       _callDetailsPage(context,photo);
