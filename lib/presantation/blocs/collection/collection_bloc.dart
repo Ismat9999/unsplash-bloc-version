@@ -26,9 +26,6 @@ import '../photos/photo_bloc.dart';
          Network.API_COLLECTIONS, Network.paramsCollections(1));
      var result = Network.parseCollections(response!);
      LogService.i(response!);
-
-     items = result;
-     isLoading = false;
    }
 
    callPhotosPage(BuildContext context, Collection collection) {
