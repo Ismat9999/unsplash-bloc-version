@@ -12,6 +12,10 @@ class CollectionLoadingState extends CollectionState{
   @override
   List<Object?> get props => [];
 }
+class CollectionSuccsessState extends CollectionState{
+  @override
+  List<Object?> get props => [];
+}
 class CollectionErrorState extends CollectionState{
   final String errorMessage;
 

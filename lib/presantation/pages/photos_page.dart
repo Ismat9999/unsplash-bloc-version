@@ -22,7 +22,7 @@ late PhotoBloc photoBloc;
   void initState() {
     super.initState();
     photoBloc= context.read<PhotoBloc>();
-    photoBloc.add(ApiCollectionsPhotosEvent());
+    photoBloc.add(ApiCollectionsPhotosEvent(widget.collection));
   }
 
   @override

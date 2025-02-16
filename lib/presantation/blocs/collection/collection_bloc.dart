@@ -3,6 +3,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:unsplashblocversion/data/models/photo_model.dart';
 import 'package:unsplashblocversion/presantation/blocs/collection/collection_event.dart';
 import 'package:unsplashblocversion/presantation/blocs/collection/collection_state.dart';
 
@@ -26,6 +27,9 @@ import '../photos/photo_bloc.dart';
          Network.API_COLLECTIONS, Network.paramsCollections(1));
      var result = Network.parseCollections(response!);
      LogService.i(response!);
+     items.addAll(result);
+     emit(ApiCollectionPhotosState(items.cast<Photo>()));
+
    }
 
    callPhotosPage(BuildContext context, Collection collection) {
